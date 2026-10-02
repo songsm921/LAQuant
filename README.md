@@ -1,15 +1,10 @@
 # LAQuant: A Simple Transform-free Large Reasoning Model Quantization by Layer-wise Lookahead Loss
 
-Layer-wise quantization-aware training (QAT) with a lookahead loss for weight-only
-low-bit large reasoning models (NeurIPS 2026).
+**Paper:** [arXiv](https://arxiv.org/abs/2605.08755)
 
-Each transformer layer is fake-quantized (per-group asymmetric INT, e.g. W3G128)
-and trained in turn to match the BF16 teacher. Instead of matching only the
-current layer's output, the lookahead loss passes the student and teacher outputs
-of the current layer through the next `W-1` frozen teacher layers (`--window_size W`)
-and compares them there, so each layer is trained for its effect on the layers ahead.
-Learnable per layer: quantization scales/zeros, learnable weight clipping (LWC),
-per-channel scaling (shared across Q/K/V and gate/up), and the layer weights.
+## News
+
+- **2026.09.26**: Accepted to NeurIPS 2026 (Main Track).
 
 ## Repository layout
 
