@@ -85,14 +85,12 @@ torchrun --nproc_per_node=8 train.py \
     --quant_lr 1e-4 --weight_lr 5e-5 --loss_mode smooth_l1 \
     --num_epochs 20 --window_size 2 \
     --max_seq_length 2048 --max_samples 4096 --batch_size 64 \
-    --early_stop 20 --disk_offload \
-    --logit_probe --probe_interval 5 --probe_samples 4 \
+    --disk_offload \
     --output_dir ./outputs/Qwen3-1.7B-w3-laquant --seed 42
 ```
 
 `--batch_size` is the global batch size, split across GPUs. `--disk_offload` keeps
-the cached hidden states on local disk (`/tmp`) instead of RAM. `--logit_probe`
-only logs the full-model logit KL of the current layer; it does not affect training.
+the cached hidden states on local disk (`/tmp`) instead of RAM.
 
 ### Outputs
 
