@@ -9,7 +9,7 @@ DATASET=${DATASET:-./data/Openr1-dataset-sampled-laquant}
 OUTPUT_DIR=${OUTPUT_DIR:-./outputs/$(basename "${MODEL}")-w3-laquant}
 mkdir -p "${OUTPUT_DIR}"
 
-torchrun --nproc_per_node=8 --master_port=${MASTER_PORT:-29500} train.py \
+torchrun --nproc_per_node=8 --master_port=${MASTER_PORT:-29500} -m laquant.train \
     --student_model "${MODEL}" \
     --teacher_model "${MODEL}" \
     --dataset_path "${DATASET}" \

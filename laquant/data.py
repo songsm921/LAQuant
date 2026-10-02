@@ -6,7 +6,7 @@ import shutil
 import torch
 from datasets import load_from_disk
 
-from utils import release_memory
+from .utils import release_memory
 
 
 

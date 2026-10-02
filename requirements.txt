@@ -1,4 +1,4 @@
-# `laquant` conda env: training (train.py), perplexity, and AIME grading (aggregate.py)
+# `laquant` conda env: training (laquant/train.py), perplexity, and AIME grading (aggregate.py)
 torch==2.10.0
 transformers==4.57.6
 accelerate==1.15.0

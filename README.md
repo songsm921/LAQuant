@@ -9,12 +9,13 @@
 ## Repository layout
 
 ```
-train.py          entry point: args, per-layer training loop, main
-data.py           calibration data loading/tokenization, batching, hidden-state cache
-checkpoint.py     final checkpoint saving, resumable per-layer checkpoints
-utils.py          distributed setup, memory management, logging, losses
-qlinear.py        QLinear (fake-quant linear with LWC + channel scaling)
-quantizer.py      STE integer asymmetric weight quantizer
+laquant/
+├── train.py      entry point: args, per-layer training loop, main
+├── data.py       calibration data loading/tokenization, batching, hidden-state cache
+├── checkpoint.py final checkpoint saving, resumable per-layer checkpoints
+├── utils.py      distributed setup, memory management, logging, losses
+├── qlinear.py    QLinear (fake-quant linear with LWC + channel scaling)
+└── quantizer.py  STE integer asymmetric weight quantizer
 scripts/          training launch scripts
 evaluation/       AIME, MMLU-Pro, GPQA, LSAT, LiveCodeBench, perplexity, zero-shot
 ```
@@ -69,10 +70,11 @@ MODEL=/path/to/local/Qwen3-1.7B DATASET=/path/to/Openr1-dataset-sampled-laquant 
 
 The scripts can be launched from any directory (paths are relative to the repo root)
 and also write the console output to `<output_dir>/train_log.txt`. The W3 script runs
-(the W4 script differs only in `--w_bit 4` and the output directory)
+(the W4 script differs only in `--w_bit 4` and the output directory); run it from the
+repo root so that the `laquant` package is importable:
 
 ```bash
-torchrun --nproc_per_node=8 train.py \
+torchrun --nproc_per_node=8 -m laquant.train \
     --student_model Qwen/Qwen3-1.7B --teacher_model Qwen/Qwen3-1.7B \
     --dataset_path ./data/Openr1-dataset-sampled-laquant \
     --w_bit 3 --w_group_size 128 --init_scale_mode minmax \

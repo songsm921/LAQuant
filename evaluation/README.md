@@ -1,6 +1,6 @@
 # Evaluation
 
-Every script takes the fake-quantized model directory written by `train.py`
+Every script takes the fake-quantized model directory written by `laquant/train.py`
 (`--output_dir`), activates its own conda env, and can be called from any directory.
 
 | Benchmark | Script | Conda env |

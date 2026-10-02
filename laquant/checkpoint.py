@@ -4,7 +4,7 @@ import shutil
 
 import torch
 
-from qlinear import QLinear
+from .qlinear import QLinear
 
 
 def save_checkpoint(model, tokenizer_dir, output_dir):

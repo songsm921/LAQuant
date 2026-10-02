@@ -38,7 +38,7 @@ from tqdm import tqdm
 # at the start of each epoch for cosine scheduling)
 warnings.filterwarnings("ignore", message=".*lr_scheduler.step.*optimizer.step.*")
 
-from qlinear import (
+from .qlinear import (
     QLinear,
     wrap_layer_with_qlinear,
     bake_layer_weights,
@@ -50,7 +50,7 @@ from qlinear import (
     setup_channel_scales,
     bake_channel_scales_into_norms,
 )
-from data import (
+from .data import (
     DiskBackedHiddens,
     get_hidden_length,
     load_calib_dataset,
@@ -62,7 +62,7 @@ from data import (
     forward_layer_inplace,
     repropagate_hiddens_upto,
 )
-from checkpoint import (
+from .checkpoint import (
     save_checkpoint,
     restore_checkpoint_qparams,
     layer_ckpt_path,
@@ -71,7 +71,7 @@ from checkpoint import (
     write_progress,
     save_layer_checkpoint,
 )
-from utils import (
+from .utils import (
     release_memory,
     setup_distributed,
     cleanup_distributed,

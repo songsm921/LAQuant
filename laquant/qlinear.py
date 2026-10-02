@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from typing import Optional
 
-from quantizer import SteIntAsymQuantizer
+from .quantizer import SteIntAsymQuantizer
 
 LWC_DEFAULT_ALPHA = 4.0
 
