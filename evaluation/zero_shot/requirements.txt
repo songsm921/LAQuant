@@ -1,0 +1,6 @@
+# `lm-eval` conda env (Python 3.12): zero-shot BoolQ, ARC-C/E, HellaSwag
+lm_eval==0.4.9.1
+vllm==0.10.1.1
+torch==2.7.1
+transformers==4.57.6
+datasets==3.6.0

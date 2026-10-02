@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Calibration data (downloaded, see README)
+data/
+
+# Training outputs (checkpoints, logs, layer_ckpt/)
+outputs/
+
+# Evaluation outputs
+evaluation/aime/generations/
+evaluation/lighteval/results/
+evaluation/zero_shot/results/
+
+# Editors / OS / tools
+.vscode/
+.idea/
+.claude/
+.DS_Store

@@ -1,0 +1,11 @@
+# `lighteval` conda env (Python 3.12): MMLU-Pro, GPQA-Diamond, LSAT-AR, LiveCodeBench
+# After installing, apply the data-parallel fix: python patch_lighteval_dp.py
+lighteval[vllm]==0.12.0
+vllm==0.10.1.1
+torch==2.7.1
+transformers==4.57.6
+datasets==4.0.0
+inspect_ai==0.3.200
+latex2sympy2_extended==1.0.6
+ray==2.54.0
+xxhash==3.8.1  # 4.x rejects str input, which lighteval 0.12.0 passes

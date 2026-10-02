@@ -1,0 +1,10 @@
+# `laquant` conda env: training (train.py), perplexity, and AIME grading (aggregate.py)
+torch==2.10.0
+transformers==4.57.6
+accelerate==1.15.0
+datasets>=2.0.0
+psutil
+# AIME grading (deepscaler math grader)
+pandas
+sympy==1.14.0
+pylatexenc==2.10
