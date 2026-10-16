@@ -1,4 +1,4 @@
-# LAQuant: A Simple Transform-free Large Reasoning Model Quantization by Layer-wise Lookahead Loss
+# LAQuant: A Simple Online Transform-free Large Reasoning Model Quantization by Layer-wise Lookahead Loss
 
 **Paper:** [arXiv](https://arxiv.org/abs/2605.08755)
 
